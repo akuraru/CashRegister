@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        if ()
-        
+        if UpdateManager.shared().update() {
+            let config = Realm.Configuration(objectTypes: [MenuItem.self, CheckoutItem.self, Checkout.self])
+            let realm = try! Realm(configuration: config)
+            
+            let item = MenuItem()
+            item.identifier = 0
+            item.name = "りんご"
+            item.sales = 100
+            
+            try! realm.write {
+                realm.add(item)
+            }
+        }
         
         return true
     }

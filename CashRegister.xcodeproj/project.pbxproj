@@ -18,6 +18,12 @@
 		BE73F48F20CD210600F792D0 /* CashRegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73F48E20CD210600F792D0 /* CashRegisterTests.swift */; };
 		BE73F49A20CD210600F792D0 /* CashRegisterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73F49920CD210600F792D0 /* CashRegisterUITests.swift */; };
 		BE73F4AB20CD2BD500F792D0 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73F4AA20CD2BD500F792D0 /* MenuItem.swift */; };
+		BE73F4B020CD3CC400F792D0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73F4AF20CD3CC400F792D0 /* DatabaseManager.swift */; };
+		BE73F4B220CD3CE100F792D0 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73F4B120CD3CE100F792D0 /* ApplicationManager.swift */; };
+		BE73F4B420CD439100F792D0 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73F4B320CD439100F792D0 /* UpdateManager.swift */; };
+		BE73F4B720CD533200F792D0 /* CheckoutItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73F4B620CD533200F792D0 /* CheckoutItemCell.swift */; };
+		BE73F4B920CD558E00F792D0 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73F4B820CD558E00F792D0 /* Checkout.swift */; };
+		BE73F4BB20CD55D800F792D0 /* CheckoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73F4BA20CD55D800F792D0 /* CheckoutItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,12 @@
 		BE73F49920CD210600F792D0 /* CashRegisterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterUITests.swift; sourceTree = "<group>"; };
 		BE73F49B20CD210600F792D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE73F4AA20CD2BD500F792D0 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		BE73F4AF20CD3CC400F792D0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		BE73F4B120CD3CE100F792D0 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
+		BE73F4B320CD439100F792D0 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
+		BE73F4B620CD533200F792D0 /* CheckoutItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutItemCell.swift; sourceTree = "<group>"; };
+		BE73F4B820CD558E00F792D0 /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
+		BE73F4BA20CD55D800F792D0 /* CheckoutItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutItem.swift; sourceTree = "<group>"; };
 		BF4AF23799B59683A5B04274 /* Pods-CashRegister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashRegister.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CashRegister/Pods-CashRegister.debug.xcconfig"; sourceTree = "<group>"; };
 		D22578AC5DFF6FB561C10BCF /* Pods-CashRegister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashRegister.release.xcconfig"; path = "Pods/Target Support Files/Pods-CashRegister/Pods-CashRegister.release.xcconfig"; sourceTree = "<group>"; };
 		E979659FF78AEE76712F35EA /* Pods-CashRegisterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashRegisterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CashRegisterTests/Pods-CashRegisterTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +151,7 @@
 		BE73F47820CD210400F792D0 /* CashRegister */ = {
 			isa = PBXGroup;
 			children = (
+				BE73F4B520CD531E00F792D0 /* View */,
 				BE73F4AD20CD3B8A00F792D0 /* ViewController */,
 				BE73F4AC20CD3A6D00F792D0 /* Manager */,
 				BE73F4A720CD29FB00F792D0 /* Database */,
@@ -177,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				BE73F4AA20CD2BD500F792D0 /* MenuItem.swift */,
+				BE73F4B820CD558E00F792D0 /* Checkout.swift */,
+				BE73F4BA20CD55D800F792D0 /* CheckoutItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +199,9 @@
 		BE73F4AC20CD3A6D00F792D0 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				BE73F4AF20CD3CC400F792D0 /* DatabaseManager.swift */,
+				BE73F4B120CD3CE100F792D0 /* ApplicationManager.swift */,
+				BE73F4B320CD439100F792D0 /* UpdateManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -206,6 +224,14 @@
 				BE73F48520CD210600F792D0 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		BE73F4B520CD531E00F792D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BE73F4B620CD533200F792D0 /* CheckoutItemCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,9 +446,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE73F4B020CD3CC400F792D0 /* DatabaseManager.swift in Sources */,
 				BE73F4AB20CD2BD500F792D0 /* MenuItem.swift in Sources */,
+				BE73F4B420CD439100F792D0 /* UpdateManager.swift in Sources */,
+				BE73F4B220CD3CE100F792D0 /* ApplicationManager.swift in Sources */,
+				BE73F4BB20CD55D800F792D0 /* CheckoutItem.swift in Sources */,
+				BE73F4B720CD533200F792D0 /* CheckoutItemCell.swift in Sources */,
 				BE73F47C20CD210400F792D0 /* ViewController.swift in Sources */,
 				BE73F47A20CD210400F792D0 /* AppDelegate.swift in Sources */,
+				BE73F4B920CD558E00F792D0 /* Checkout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,7 +629,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CashRegister/Info.plist;
+				INFOPLIST_FILE = CashRegister/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -615,7 +647,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CashRegister/Info.plist;
+				INFOPLIST_FILE = CashRegister/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
