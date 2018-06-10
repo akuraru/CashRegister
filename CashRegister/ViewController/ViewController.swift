@@ -10,12 +10,12 @@ import UIKit
 import RealmSwift
 
 class ViewController: UICollectionViewController {
-    var checkout: Checkout!
+    var checkoutItems: Results<CheckoutItem>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        checkout = DatabaseManager.shared().orderCheckout()
+        checkoutItems = DatabaseManager.shared().orderCheckoutItems()
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -23,14 +23,22 @@ class ViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return checkout.checkoutItem.count
+        return checkoutItems.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CheckoutItemCell
-        let checkoutItem = checkout.checkoutItem[indexPath.row]
+        let checkoutItem = checkoutItems[indexPath.row]
         cell.updateView(checkoutItem)
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let checkoutItem = checkoutItems[indexPath.row]
+        try! checkoutItems.realm?.write {
+            checkoutItem.count += 1
+        }
+        collectionView.reloadItems(at: [indexPath])
     }
 }
 

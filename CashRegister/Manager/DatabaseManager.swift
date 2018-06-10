@@ -14,6 +14,11 @@ struct DatabaseManager {
         return ApplicationManager.shared.database
     }
     
+    func orderCheckoutItems()  -> Results<CheckoutItem> {
+        let realm = try! Realm()
+        return realm.objects(CheckoutItem.self).filter("checkout = %@", orderCheckout())
+    }
+    
     func orderCheckout() -> Checkout {
         let realm = try! Realm()
         if let checkout = realm.objects(Checkout.self).filter("state = %d", Checkout.State.order.rawValue).first {

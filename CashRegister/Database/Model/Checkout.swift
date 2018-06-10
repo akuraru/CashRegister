@@ -13,8 +13,8 @@ class Checkout: Object {
     }
     convenience init(with realm: Realm) {
         self.init()
-        realm.objects(MenuItem.self).forEach {[weak self] (item) in
-            self?.checkoutItem.append(CheckoutItem(menuItem: item))
+        realm.objects(MenuItem.self).forEach { (item) in
+            self.checkoutItem.append(CheckoutItem(menuItem: item, checkout: self))
         }
     }
 }
