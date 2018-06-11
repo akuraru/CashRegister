@@ -13,11 +13,15 @@
         <!--Navigation Controller-->
         <scene sceneID="FmQ-Ds-azj">
             <objects>
-                <navigationController id="tOb-Gb-f0y" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="tOb-Gb-f0y" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="08g-T4-Duz">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ual-Un-Frg">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="8et-nq-BjN" kind="relationship" relationship="rootViewController" id="Gh3-rS-kuI"/>
                     </connections>
@@ -68,6 +72,7 @@
                                         </label>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="LiV-C9-klR" firstAttribute="leading" secondItem="oeo-Dq-xqm" secondAttribute="leadingMargin" id="2d9-BW-F9i"/>
                                     <constraint firstItem="ukR-zA-Mwg" firstAttribute="leading" secondItem="oeo-Dq-xqm" secondAttribute="leadingMargin" id="38k-Zk-O2I"/>
@@ -91,7 +96,16 @@
                             <outlet property="delegate" destination="8et-nq-BjN" id="Iwo-J7-pAr"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7Wx-fv-9oJ"/>
+                        <barButtonItem title="会計" id="5To-6f-Hmc">
+                            <connections>
+                                <action selector="tapCheckout:" destination="8et-nq-BjN" id="YyB-DJ-XEZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="hoge" id="o4j-jq-3Ij"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erF-L8-fxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,12 +10,13 @@ import UIKit
 import RealmSwift
 
 class ViewController: UICollectionViewController {
-    var checkoutItems: Results<CheckoutItem>!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var checkout: Checkout!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        checkoutItems = DatabaseManager.shared().orderCheckoutItems()
+        checkout = DatabaseManager.shared().orderCheckout()
+        collectionView?.reloadData()
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -23,22 +24,24 @@ class ViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return checkoutItems.count
+        return checkout.items.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CheckoutItemCell
-        let checkoutItem = checkoutItems[indexPath.row]
+        let checkoutItem = checkout.items[indexPath.row]
         cell.updateView(checkoutItem)
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let checkoutItem = checkoutItems[indexPath.row]
-        try! checkoutItems.realm?.write {
-            checkoutItem.count += 1
-        }
+        let checkoutItem = checkout.items[indexPath.row]
+        checkoutItem.count += 1
         collectionView.reloadItems(at: [indexPath])
+    }
+    @IBAction func tapCheckout(_ sender: Any) {
+        let viewController = CheckoutViewController.viewController(with: checkout)
+        navigationController!.pushViewController(viewController, animated: true)
     }
 }
 

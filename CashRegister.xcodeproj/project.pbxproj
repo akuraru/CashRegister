@@ -10,6 +10,9 @@
 		01F5FFFFD6497BD85A4186E9 /* Pods_CashRegisterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E47AE2AD74B367A8428F39 /* Pods_CashRegisterTests.framework */; };
 		0F9BF16A1306E8D85F998D62 /* Pods_CashRegister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA1D03D3158977E294065B9 /* Pods_CashRegister.framework */; };
 		998CE3C7400CD9FA357D1858 /* Pods_CashRegisterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2EFD857F5DA208554262FE /* Pods_CashRegisterUITests.framework */; };
+		BE21BC8C20CDE8A500DB511C /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE21BC8B20CDE8A500DB511C /* CheckoutViewController.swift */; };
+		BE21BC8E20CDE8C000DB511C /* CheckoutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE21BC8D20CDE8C000DB511C /* CheckoutViewController.storyboard */; };
+		BE21BC9020CDF32200DB511C /* UITextFieldWithNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE21BC8F20CDF32200DB511C /* UITextFieldWithNumberPad.swift */; };
 		BE73F47A20CD210400F792D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73F47920CD210400F792D0 /* AppDelegate.swift */; };
 		BE73F47C20CD210400F792D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE73F47B20CD210400F792D0 /* ViewController.swift */; };
 		BE73F47F20CD210400F792D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE73F47D20CD210400F792D0 /* Main.storyboard */; };
@@ -48,6 +51,9 @@
 		2E2EFD857F5DA208554262FE /* Pods_CashRegisterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashRegisterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B1BBFCB275A33FEF3CDB09 /* Pods-CashRegisterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashRegisterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CashRegisterUITests/Pods-CashRegisterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		72E47AE2AD74B367A8428F39 /* Pods_CashRegisterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashRegisterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE21BC8B20CDE8A500DB511C /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		BE21BC8D20CDE8C000DB511C /* CheckoutViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckoutViewController.storyboard; sourceTree = "<group>"; };
+		BE21BC8F20CDF32200DB511C /* UITextFieldWithNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldWithNumberPad.swift; sourceTree = "<group>"; };
 		BE73F47620CD210400F792D0 /* CashRegister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashRegister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE73F47920CD210400F792D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE73F47B20CD210400F792D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +130,15 @@
 				2E2EFD857F5DA208554262FE /* Pods_CashRegisterUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE21BC8A20CDE88B00DB511C /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				BE21BC8B20CDE8A500DB511C /* CheckoutViewController.swift */,
+				BE21BC8D20CDE8C000DB511C /* CheckoutViewController.storyboard */,
+			);
+			path = Checkout;
 			sourceTree = "<group>";
 		};
 		BE73F46D20CD210400F792D0 = {
@@ -209,6 +224,7 @@
 		BE73F4AD20CD3B8A00F792D0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BE21BC8A20CDE88B00DB511C /* Checkout */,
 				BE73F47B20CD210400F792D0 /* ViewController.swift */,
 				BE73F47D20CD210400F792D0 /* Main.storyboard */,
 			);
@@ -230,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				BE73F4B620CD533200F792D0 /* CheckoutItemCell.swift */,
+				BE21BC8F20CDF32200DB511C /* UITextFieldWithNumberPad.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,6 +362,7 @@
 				BE73F48420CD210500F792D0 /* LaunchScreen.storyboard in Resources */,
 				BE73F48120CD210500F792D0 /* Assets.xcassets in Resources */,
 				BE73F47F20CD210400F792D0 /* Main.storyboard in Resources */,
+				BE21BC8E20CDE8C000DB511C /* CheckoutViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +472,9 @@
 				BE73F4B720CD533200F792D0 /* CheckoutItemCell.swift in Sources */,
 				BE73F47C20CD210400F792D0 /* ViewController.swift in Sources */,
 				BE73F47A20CD210400F792D0 /* AppDelegate.swift in Sources */,
+				BE21BC8C20CDE8A500DB511C /* CheckoutViewController.swift in Sources */,
 				BE73F4B920CD558E00F792D0 /* Checkout.swift in Sources */,
+				BE21BC9020CDF32200DB511C /* UITextFieldWithNumberPad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

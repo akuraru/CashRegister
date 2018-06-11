@@ -1,7 +1,7 @@
 import RealmSwift
 
 class Checkout: Object {
-    let checkoutItem = List<CheckoutItem>()
+    let items = List<CheckoutItem>()
     @objc dynamic var pay = 0
     @objc dynamic var change = 0
     @objc dynamic var state = State.order.rawValue
@@ -14,7 +14,11 @@ class Checkout: Object {
     convenience init(with realm: Realm) {
         self.init()
         realm.objects(MenuItem.self).forEach { (item) in
-            self.checkoutItem.append(CheckoutItem(menuItem: item, checkout: self))
+            self.items.append(CheckoutItem(menuItem: item, checkout: self))
         }
+    }
+    
+    func total() -> Int {
+        return items.reduce(0) {(total, item) in total + item.count * item.menuItem!.sales }
     }
 }
